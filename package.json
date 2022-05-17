@@ -41,10 +41,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1"
   },
-  "dependencies": {
-    "@line/liff": "^2.19.1",
-    "moment": "^2.29.3"
-  },
+  "dependencies": {},
   "lint-staged": {
     "src/**/*.{ts,svelte}": [
       "npm lint"
