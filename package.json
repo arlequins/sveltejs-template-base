@@ -2,6 +2,9 @@
   "name": "svelte-app",
   "version": "0.0.1",
   "type": "module",
+  "engines": {
+    "node": ">=16.x"
+  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -11,10 +14,11 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-    "fix": "prettier --ignore-path .gitignore --write --plugin-search-dir=. . && eslint --ignore-path .gitignore . --fix"
+    "fix": "prettier --ignore-path .gitignore --write --plugin-search-dir=. . && eslint --ignore-path .gitignore . --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@arlequins/eslint-config-typescript": "^0.0.4",
+    "@arlequins/eslint-config-typescript-sveltejs": "^0.0.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-node": "next",
     "@sveltejs/adapter-static": "next",
@@ -33,10 +37,20 @@
     "svelte-check": "^2.7.1",
     "svelte-preprocess": "^4.10.6",
     "tslib": "^2.4.0",
-    "typescript": "~4.6.4"
+    "typescript": "~4.6.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1"
   },
   "dependencies": {
     "@line/liff": "^2.19.1",
     "moment": "^2.29.3"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,svelte}": [
+      "npm lint"
+    ],
+    "src/**/*.{ts,svelte,scss,css}": [
+      "npm format"
+    ]
   }
 }
