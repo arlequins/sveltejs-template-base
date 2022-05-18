@@ -23,8 +23,18 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+    steps:
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        VITE_EXAMPLE: test
+
       - name: Build
         run: npm run build
+        env:
+          CI: true
+          GITHUB_PAGES: true
+          GITHUB_BASEPATH: /sveltejs-template-base
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
