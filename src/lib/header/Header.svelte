@@ -96,7 +96,7 @@
 
   li.active::before {
     --size: 6px;
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     position: absolute;
