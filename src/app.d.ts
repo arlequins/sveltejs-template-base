@@ -18,6 +18,7 @@ declare module '*.svg';
 declare module '$app/stores';
 declare module '$app/navigation';
 declare module '$app/env';
+declare module '$app/paths';
 
 interface ImportMeta {
   env: {
