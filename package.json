@@ -19,8 +19,6 @@
   },
   "devDependencies": {
     "@arlequins/eslint-config-typescript-sveltejs": "^0.0.1",
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-node": "next",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "chota": "^0.8.0",
