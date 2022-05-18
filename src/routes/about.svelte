@@ -1,4 +1,6 @@
 <script context="module">
+  import env from '$lib/env';
+
   import { browser, dev } from '$app/env';
 
   // we don't need any JS on this page, though we'll load
@@ -21,6 +23,7 @@
 
 <div class="content">
   <h1>About this app</h1>
+  <p>environment value - VITE_EXAMPLE: {env.VITE_EXAMPLE}</p>
 
   <p>
     This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the following into your command line and following the prompts:
@@ -34,7 +37,7 @@
   </p>
 
   <p>
-    The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using it with JavaScript disabled!
+    The <a href="./todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using it with JavaScript disabled!
   </p>
 </div>
 

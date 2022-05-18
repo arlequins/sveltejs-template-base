@@ -44,7 +44,7 @@ export const post = async ({ request, locals }: { request: any; locals: any }) =
 const redirect = {
   status: 303,
   headers: {
-    location: '/todos',
+    location: './todos',
   },
 };
 

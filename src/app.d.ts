@@ -18,3 +18,10 @@ declare module '*.svg';
 declare module '$app/stores';
 declare module '$app/navigation';
 declare module '$app/env';
+
+interface ImportMeta {
+  env: {
+    NODE_ENV: 'development' | 'production';
+    VITE_EXAMPLE?: string;
+  };
+}
