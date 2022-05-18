@@ -4,6 +4,7 @@
 
 <script lang="ts">
   import Counter from '$lib/Counter.svelte';
+  
   import { base } from '$app/paths';
 </script>
 

@@ -1,8 +1,8 @@
 <script lang="ts">
   import logo from './svelte-logo.svg';
 
-  import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { page } from '$app/stores';
 </script>
 
 <header>
