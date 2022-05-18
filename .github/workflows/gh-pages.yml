@@ -23,7 +23,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-    steps:
     - name: Make envfile
       uses: SpicyPizza/create-envfile@v1.3
       with:
