@@ -1,8 +1,9 @@
 name: GitHub Pages
 
 on:
-  release:
-    types: [published]
+  push:
+  # release:
+  #   types: [published]
 
 jobs:
   deploy:
@@ -25,11 +26,8 @@ jobs:
         with:
           envkey_VITE_EXAMPLE: test
 
-      - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_DEBUG: false
-          envkey_SOME_API_KEY: "123456abcdef"
+      - name: Cat
+        run: cat .env
 
       - name: Build
         run: npm run build
