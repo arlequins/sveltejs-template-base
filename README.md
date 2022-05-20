@@ -36,4 +36,6 @@ You can preview the production build with `npm run preview`.
 
 ## Deploying to the web
 
-TBD
+### With Github pages
+
+set secrect `BASEPATH`, `USE_PAGES`

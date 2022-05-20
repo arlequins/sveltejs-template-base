@@ -1,14 +1,10 @@
-name: GitHub Pages
+name: Check
 
-on:
-  release:
-    types: [published]
+on: [pull_request]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -32,9 +28,14 @@ jobs:
           GITHUB_PAGES: ${{ secrets.BASEPATH }}
           GITHUB_BASEPATH: ${{ secrets.USE_PAGES }}
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+      - name: check format
+        run: npm run format
+
+      - name: check lint
+        run: npm run lint
+
+      - name: check svelte-check
+        run: npm run check
+
+      - name: check test
+        run: npm run test
