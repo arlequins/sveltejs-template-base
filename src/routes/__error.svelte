@@ -1,11 +1,17 @@
 <script lang="ts" context="module">
   import { StatusCode } from '$lib/constants';
 
-  export const load = ({ error, status }: { error: {
-    message: string,
-    name: string,
-    stack: string,
-  }; status: number }) => {
+  export const load = ({
+    error,
+    status,
+  }: {
+    error: {
+      message: string;
+      name: string;
+      stack: string;
+    };
+    status: number;
+  }) => {
     if (Object.hasOwnProperty.call(StatusCode, status)) {
       return {
         props: {
