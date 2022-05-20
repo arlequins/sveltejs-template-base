@@ -1,8 +1,8 @@
 <script context="module">
   import env from '$lib/env';
+  import { setPath } from '$lib/utils';
 
   import { browser, dev } from '$app/env';
-  import { base } from '$app/paths';
 
   // we don't need any JS on this page, though we'll load
   // it in dev so that we get hot module replacement...
@@ -38,7 +38,7 @@
   </p>
 
   <p>
-    The <a href={`${base}/todos`}>TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using it with JavaScript disabled!
+    The <a href={setPath('/todos')}>TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using it with JavaScript disabled!
   </p>
 </div>
 

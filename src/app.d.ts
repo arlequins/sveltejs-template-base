@@ -19,6 +19,7 @@ declare module '$app/stores';
 declare module '$app/navigation';
 declare module '$app/env';
 declare module '$app/paths';
+declare module 'svelte-chota';
 
 interface ImportMeta {
   env: {

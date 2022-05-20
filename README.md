@@ -36,6 +36,4 @@ You can preview the production build with `npm run preview`.
 
 ## Deploying to the web
 
-### With [Amplify](https://aws.amazon.com/jp/amplify/)
-
-not yet
+TBD

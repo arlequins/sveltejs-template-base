@@ -4,8 +4,7 @@
 
 <script lang="ts">
   import Counter from '$lib/Counter.svelte';
-
-  import { base } from '$app/paths';
+  import { setPath } from '$lib/utils';
 </script>
 
 <svelte:head>
@@ -17,8 +16,8 @@
   <h1>
     <div class="welcome">
       <picture>
-        <source srcset={`${base}/svelte-welcome.webp`} type="image/webp" />
-        <img src={`${base}/svelte-welcome.png`} alt="Welcome" />
+        <source srcset={setPath('/svelte-welcome.webp')} type="image/webp" />
+        <img src={setPath('/svelte-welcome.png')} alt="Welcome" />
       </picture>
     </div>
 
