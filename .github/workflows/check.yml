@@ -28,14 +28,11 @@ jobs:
           envkey_VITE_EXAMPLE: test
 
       - name: Build
-        run: echo ${{ secrets.BASEPATH }}
-
-      - name: Build
         run: npm run build
         env:
           CI: true
-          GITHUB_PAGES: ${{ secrets.BASEPATH }}
-          GITHUB_BASEPATH: ${{ secrets.USE_PAGES }}
+          GITHUB_PAGES: true
+          GITHUB_BASEPATH: ${{ secrets.BASEPATH }}
 
       - name: check format
         run: npm run format
