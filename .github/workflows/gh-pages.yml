@@ -29,8 +29,8 @@ jobs:
         run: npm run build
         env:
           CI: true
-          GITHUB_PAGES: ${{ secrets.BASEPATH }}
-          GITHUB_BASEPATH: ${{ secrets.USE_PAGES }}
+          GITHUB_PAGES: true
+          GITHUB_BASEPATH: ${{ secrets.BASEPATH }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

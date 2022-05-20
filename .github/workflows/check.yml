@@ -1,9 +1,15 @@
-name: Check
+name: status check
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - '*'         # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!gh-pages'   # excludes master
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,8 +31,11 @@ jobs:
         run: npm run build
         env:
           CI: true
-          GITHUB_PAGES: ${{ secrets.BASEPATH }}
-          GITHUB_BASEPATH: ${{ secrets.USE_PAGES }}
+          GITHUB_PAGES: true
+          GITHUB_BASEPATH: ${{ secrets.BASEPATH }}
+
+      - name: install playwright
+        run: npx playwright install
 
       - name: check format
         run: npm run format
