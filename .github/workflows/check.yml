@@ -1,4 +1,4 @@
-name: Check
+name: status check
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - '!gh-pages'   # excludes master
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,9 @@ jobs:
         uses: SpicyPizza/create-envfile@v1.3
         with:
           envkey_VITE_EXAMPLE: test
+
+      - name: Build
+        run: echo ${{ secrets.BASEPATH }}
 
       - name: Build
         run: npm run build
