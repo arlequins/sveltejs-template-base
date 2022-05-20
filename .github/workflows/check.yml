@@ -34,6 +34,9 @@ jobs:
           GITHUB_PAGES: true
           GITHUB_BASEPATH: ${{ secrets.BASEPATH }}
 
+      - name: install playwright
+        run: npx playwright install
+
       - name: check format
         run: npm run format
 
